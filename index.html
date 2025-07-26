@@ -49,14 +49,14 @@
                 </div>
             </nav>
         </div>
-        <div class="hero">
+        <div class="hero" id="about">
             <div class="hero-content">
                 <div class="title">
                     <h1>Тетяна</h1>
                     <span>Духовний Провідник</span>
                 </div>
                 <div class="hero-img">
-                    <img src="images/photo.JPG" alt="TANIA">
+                    <img src="images/photo.jpg" alt="TANIA">
                 </div>
                 <div class="hero-text">
                     <div class="title">
@@ -384,7 +384,6 @@
     </footer>
 
     <script>
-        // mobile burger
         const burger = document.getElementById('burger');
         const header = document.getElementById('header');
         const body = document.getElementById('body');
@@ -395,21 +394,35 @@
             body.classList.toggle('active');
         });
 
+        document.querySelectorAll('.nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function () {
+                header.classList.remove('active');
+                burger.classList.remove('active');
+                body.classList.remove('active');
+            });
+        });
+
+
+
         // dropdown-menu
         document.addEventListener('DOMContentLoaded', () => {
             const dropdown = document.querySelector('.dropdown');
 
-            dropdown.addEventListener('click', (e) => {
-                e.preventDefault();
-                dropdown.classList.toggle('open');
-            });
+            if (!dropdown) return;
 
             document.addEventListener('click', (e) => {
-                if (!dropdown.contains(e.target)) {
+                const isToggle = e.target.closest('.dropdown-toggle');
+                const isInsideMenu = dropdown.contains(e.target);
+
+                if (isToggle) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('open');
+                } else if (!isInsideMenu) {
                     dropdown.classList.remove('open');
                 }
             });
         });
+
 
         // carousel
 
@@ -451,7 +464,6 @@
             window.addEventListener('resize', updateCarousel);
             updateCarousel();
         });
-
 
 
     </script>
