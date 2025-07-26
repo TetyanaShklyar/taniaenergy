@@ -997,8 +997,10 @@ footer a {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-    margin-top: 30px;
-    background-color: var(--light_green);
+    margin-top: 6px;
+    box-shadow: none;
+    left: -30%;
+    padding: 30px;
   }
   .nav a:hover::after {
     width: 0;
