@@ -395,10 +395,13 @@
         });
 
         document.querySelectorAll('.nav a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function () {
-                header.classList.remove('active');
-                burger.classList.remove('active');
-                body.classList.remove('active');
+            link.addEventListener('click', function (e) {
+                const isInsideDropdown = e.target.closest('.dropdown');
+                if (!isInsideDropdown) {
+                    header.classList.remove('active');
+                    burger.classList.remove('active');
+                    body.classList.remove('active');
+                }
             });
         });
 
