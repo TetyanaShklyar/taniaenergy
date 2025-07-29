@@ -706,16 +706,13 @@ section > .servise-content {
 .review-img {
   width: 100%;
   height: auto;
-  height: 75%;
-  max-height: 500px;
   border-radius: 10px;
   box-shadow: -3px 6px 9px 1px rgba(79, 84, 52, 0.35);
-  object-fit: cover;
 }
 
 .carousel-button {
   position: absolute;
-  top: 45%;
+  top: 55%;
   transform: translateY(-50%);
   background-color: var(--light_green);
   color: #fff;
@@ -816,9 +813,6 @@ footer a {
   .review-carousel-container {
     max-width: 300px;
   }
-  .review-img {
-    max-height: 490px;
-  }
   #reviews {
     gap: 0;
   }
@@ -827,9 +821,6 @@ footer a {
   }
   .reviews-back {
     padding: 0;
-  }
-  #contacts {
-    margin-top: -80px;
   }
 }
 
