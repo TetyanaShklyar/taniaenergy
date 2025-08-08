@@ -367,6 +367,8 @@ header {
 
 .hero-text .main-button {
   margin-top: 30px;
+  position: relative;
+  z-index: 100000;
 }
 
 .hero-text p:before {
